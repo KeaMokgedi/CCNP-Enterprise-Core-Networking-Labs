@@ -1,0 +1,104 @@
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+security passwords min-length 12
+!
+hostname R1
+!
+login block-for 120 attempts 3 within 60
+!
+!
+enable secret 5 $1$mERr$2q6B19eTeuK92k7m8Bhgz/
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username SShadmin privilege 15 secret 5 $1$mERr$fuFUxOtVJZMfnQOcoB7vt/
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain-name ccna-lab.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description Management Loopback
+ ip address 10.0.0.1 255.255.255.0
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:DB8:ACAD:2::1/64
+!
+interface GigabitEthernet0/0/0
+ description Connection to Server LAN
+ ip address 192.168.0.1 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:DB8:ACAD::1/64
+!
+interface GigabitEthernet0/0/1
+ description Connection to PC-A LAN
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address 2001:DB8:ACAD:1::1/64
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+ip access-list extended sl_def_acl
+ deny tcp any any eq telnet
+ deny tcp any any eq www
+ deny tcp any any eq 22
+ permit tcp any any eq 22
+!
+banner motd ^CUNAUTHORIZED ACCESS IS PROHIBITED^C
+!
+!
+!
+!
+line con 0
+ exec-timeout 4 0
+ password 7 08654F471A1A0A565328232A60
+ login
+!
+line aux 0
+!
+line vty 0 4
+ exec-timeout 4 0
+ password 7 08654F471A1A0A56533D383D60
+ login local
+ transport input ssh
+!
+!
+!
+end
