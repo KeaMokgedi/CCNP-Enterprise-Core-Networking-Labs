@@ -1,0 +1,155 @@
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    24577
+             Address     00D0.BCC9.570D
+             Cost        10
+             Port        2(FastEthernet0/2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0001.6481.82C3
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/23           Desg FWD 19        128.23   P2p
+Fa0/3            Altn BLK 19        128.3    P2p
+Fa0/1            Altn BLK 19        128.1    P2p
+Fa0/2            Root FWD 10        128.2    P2p
+Fa0/4            Desg FWD 19        128.4    P2p
+
+
+
+
+
+
+
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname A1
+!
+!
+no profinet
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+vtp mode transparent
+!
+spanning-tree mode rapid-pvst
+!
+!
+!
+!
+!
+!
+vlan 2
+ name SecondVLAN
+!
+vlan 3
+ name ThirdVLAN
+!
+vlan 4
+ name FourthVLAN
+!
+vlan 5
+ name FifthVLAN
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+ spanning-tree cost 10
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+!
+end
