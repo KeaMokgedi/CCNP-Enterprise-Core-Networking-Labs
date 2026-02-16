@@ -7,7 +7,7 @@ This project demonstrates the implementation of **VTP Version 2** in a Cisco swi
 
 ---
 
-## 🛠 Topology & Resources
+##  Topology & Resources
 * **D1 (VTP Server):** The authoritative source for VLAN configurations.
 * **D2 (VTP Transparent):** Acts as a pass-through for VTP advertisements without updating its local database.
 * **A1 (VTP Client):** Synchronizes its VLAN database based on updates from D1.
