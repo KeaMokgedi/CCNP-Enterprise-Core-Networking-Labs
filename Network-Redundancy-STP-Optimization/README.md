@@ -7,9 +7,6 @@ This project demonstrates the implementation and verification of **Spanning Tree
 ##  Network Topology
 The lab uses a triangular redundant topology to create potential loops, which are then managed by STP.
 
-![Network Topology](./your_screenshot_name.png) 
-*(Note: Ensure your screenshot file is in the same folder and named correctly here)*
-
 ### **Device Inventory**
 * **D1**: Cisco 3650 (Root Bridge)
 * **D2**: Cisco 3650 (Designated Switch)
