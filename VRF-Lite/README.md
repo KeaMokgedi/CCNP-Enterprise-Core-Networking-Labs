@@ -1,4 +1,4 @@
-# Multi-Customer Dual-Stack Network Infrastructure
+## Multi-Customer Dual-Stack Network Infrastructure
 A comprehensive implementation of a Service Provider hub-and-spoke topology, providing isolated Site-to-Site connectivity for multiple customers using legacy Serial links and modern 802.1Q sub-interfaces.
 
 ##  Project Overview
@@ -26,7 +26,9 @@ interface GigabitEthernet0/0/1.5
 interface GigabitEthernet0/0/1.8
  encapsulation dot1Q 8
  ip address 10.1.30.1 255.255.255.0
- ipv6 address 2001:DB8:ACAD:2013::1/64
+ ipv6 address 2001:DB8:ACAD:2013::1/64```
+
+
 
 ## Troubleshooting & Evolution of Design
 
