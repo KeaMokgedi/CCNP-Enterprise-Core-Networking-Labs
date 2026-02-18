@@ -26,7 +26,8 @@ interface GigabitEthernet0/0/1.5
 interface GigabitEthernet0/0/1.8
  encapsulation dot1Q 8
  ip address 10.1.30.1 255.255.255.0
- ipv6 address 2001:DB8:ACAD:2013::1/64```
+ ipv6 address 2001:DB8:ACAD:2013::1/64
+ text```
 
 
 
