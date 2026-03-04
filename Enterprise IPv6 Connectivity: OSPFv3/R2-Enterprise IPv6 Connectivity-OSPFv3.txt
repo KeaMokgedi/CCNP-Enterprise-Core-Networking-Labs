@@ -1,0 +1,89 @@
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R2
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ no ip address
+ ipv6 address FE80::2:3 link-local
+ ipv6 address 2001:DB8:FEED:209::1/64
+ ipv6 ospf 123 area 0
+!
+interface GigabitEthernet0/0/0
+ ip address 172.16.0.1 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address FE80::2:1 link-local
+ ipv6 address 2001:DB8:ACAD:A001::1/64
+ ipv6 ospf 123 area 0
+!
+interface GigabitEthernet0/0/1
+ ip address 172.16.1.1 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address FE80::2:2 link-local
+ ipv6 address 2001:DB8:ACAD:A002::1/64
+ ipv6 ospf 123 area 0
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ipv6 router ospf 123
+ router-id 2.2.2.1
+ log-adjacency-changes
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
