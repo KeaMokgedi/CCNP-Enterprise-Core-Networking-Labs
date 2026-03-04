@@ -1,3 +1,6 @@
+<img width="736" height="509" alt="Screenshot 2026-03-04 233658" src="https://github.com/user-attachments/assets/7bdc83f2-eba4-46eb-a896-18e2d274598c" />
+
+
 # Multiarea OSPFv3 Implementation & Route Summarization
 
 ##  Project Overview
